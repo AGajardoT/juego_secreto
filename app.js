@@ -1,7 +1,18 @@
 let numeroSecreto = 0;
 let intentos = 1;
 let listaNumerosSorteados = [];
-let numeroMaximo = 2;
+let numeroMaximo = 10;
+
+numeroMaximo = prompt(`Ingrese el número maximo para el juego`);
+
+//Enter presionado en el input
+let inputUsuario = document.getElementById(`valorUsuario`);
+inputUsuario.addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+                verificarIntento();
+        }
+});
+
 
 function asignarTextoElemento(elemento, texto) {
         let elementoHTML = document.querySelector(elemento);
@@ -27,12 +38,7 @@ function verificarIntento() {
 }
 return;
 }
-//dudoso :(
-function pressEnter(event) {
-        if (event.key === `Enter`) {
-                verificarIntento();
-}
-}
+
 
 function limpiarCajaTexto () {//Limpiar la caja de texto
         document.querySelector(`#valorUsuario`).value = ``;
